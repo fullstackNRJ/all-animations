@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
-    --redhot:'951515';
+    --redhot:'#951515';
+    --bgColor:0, 255, 241;
+  
     
 }
 body {
@@ -30,7 +32,7 @@ body {
   .cards:hover .card {
     background: radial-gradient(
       800px circle at var(--mouseX) var(--mouseY),
-      rgba(0, 255, 241, 0.4),
+      rgba(var(--bgColor), 0.4),
       transparent 15%
     );
   }
@@ -40,11 +42,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(
+    /* background: radial-gradient(
       400px circle at 0 0,
       rgba(0, 255, 241, 0),
       transparent 0%
-    );
+    ); */
     border-radius: 8px;
     transition: 0.15s;
   }
@@ -64,7 +66,7 @@ body {
     border-radius: inherit;
     background: radial-gradient(
       500px circle at var(--mouseX) var(--mouseY),
-      rgba(0, 255, 241, 0.1),
+      rgba(var(--bgColor), 0.1),
       transparent 35%
     );
     opacity: 0;
