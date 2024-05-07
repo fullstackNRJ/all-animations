@@ -26,15 +26,30 @@
            
             
            }
+
+           .eye:before{
+                content:"";
+                position: absolute;
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background-color: white;
+                top: 50%;
+                left: 25%;
+                transform: translate(-50%,-50%);
+           }
+
+           
         .left{
             top: 59%;
-    left: 32%;
+            left: 32%;
             }
 
             .right{
                 top: 58%;
-    right: 32%;
+                right: 32%;
             }
+
             .eyeball{
                 position: absolute;
                 
@@ -55,10 +70,11 @@
     <div class="main">
         <img src="./pickachu.jpg" alt="pickachu" />
         <span class="eye left"> 
-            <span class="eyeball"></span>
+           <!--  <span class="eyeball"></span> -->
         </span>
         <span class="eye right">
-            <span class="eyeball"></span> </span>
+            <!-- <span class="eyeball"></span>  -->
+        </span>
     </div>
     <script src="./index.js"></script>
 </body>
