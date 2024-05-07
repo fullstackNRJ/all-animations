@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        img{
+            max-width: 100%;
+        }
+        .gallery{
+            --gap: 0.5rem;
+            display:grid;
+            gap:var(--gap);
+            grid-template-columns: repeat(6, calc((100px - (var(--gap) /2))));
+            grid-template-rows: repeat(3, calc((100px - (var(--gap) /2))));
+
+            img {
+                aspect-ratio: 1;
+                object-fit: cover;
+                grid-column: span 2;
+                border-radius: var(--gap);
+                clip-path: path('M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z');
+                transition: clip-path 500ms;
+                
+               &:nth-of-type(4){
+                grid-column: 2/ span 2;
+               } 
+
+               &:hover{
+                z-index:100;
+                clip-path: path('M 0 0 C 100 0 100 0 200 0 C 200 50 200 50 200 80 C 200 100 200 100 200 120 C 200 150 200 150 200 200 C 100 200 100 200 0 200 C 0 150 0 150 0 120 C 0 100 0 100 0 80 Z');
+               }
+
+               &:not(:hover){
+                animation: zIndexHack 500ms;
+               }
+
+            }
+        }
+            
+        .gallery:hover > img {
+            filter: brightness(.5) saturate(.5)
+        }
+        .gallery > img:hover{
+            filter: brightness(1) saturate(1.5)
+        }
+
+        @keyframes zIndex {
+            0%, 100%{
+                z-index: 10;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <article class="gallery">
+        <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
+        <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
+      </article>
+</body>
+</html>
