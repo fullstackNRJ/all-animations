@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll eyes with cursor</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            --eyeBallLeft: 50%;
+            --eyeBallRight:50%
+        }
+        .main {
+            position: relative;
+        }
+
+        .eye{
+            position: absolute;
+            width:25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: black;
+           /*  display: flex;
+            justify-content: center;
+            align-items: center; */
+            
+           }
+        .left{
+            top: 59%;
+    left: 32%;
+            }
+
+            .right{
+                top: 58%;
+    right: 32%;
+            }
+            .eyeball{
+                position: absolute;
+                
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background-color: white;
+            /*     top: var(--eyeBallLeft);
+                left: var(--eyeBallRight);
+                transform: translate(-50%,-50%); */
+            }
+            
+        
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <img src="./pickachu.jpg" alt="pickachu" />
+        <span class="eye left"> 
+            <span class="eyeball"></span>
+        </span>
+        <span class="eye right">
+            <span class="eyeball"></span> </span>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
