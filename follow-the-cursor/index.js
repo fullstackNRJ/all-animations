@@ -10,7 +10,7 @@ function findAngle(cx, cy, ex, ey) {
   const dx = ex - cx;
   const rad = Math.atan2(dy, dx);
   const slope = (ey - cy) / (ex - cx);
-  const deg = (rad * 180) / Math.PI;
+  const deg = rad * (180 / Math.PI) + 360;
   return deg;
 }
 
