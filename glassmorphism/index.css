@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #0c1016;
+    color: #ffffff;
+    font-family: "Euclid Circular A";
+    overflow-x: hidden;
+}
+
+.headings{
+
+}
+
+.buttons{
+ display: flex;
+ gap: 4rem;
+}
+.cards{
+
+}
+.btn-cta{
+    width: 10rem;
+}
+.btn-cta, .btn-cta::after,
+.btn-cta::before{
+     color: #fff;
+     padding: 0.5rem;
+     font-size: 1.5rem;
+     cursor: pointer;
+     letter-spacing: 2px;
+
+     background: rgba(255, 255, 255, 0.15);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     border-radius: 10px;
+     border: 1px solid rgba(255, 255, 255, 0.18);
+     transition: 0.3s;
+
+    }
+
+.btn-cta::after,
+.btn-cta::before{
+    position: absolute;
+    content: '';
+    animation: float 4s  infinite;
+}
+
+.btn-cta::after{
+    left: -1.2rem;
+    bottom: -1.2rem;
+    width:1rem;
+    height:1rem;
+    animation-delay: 0.5s;
+}
+
+.btn-cta::before{
+    right: -2.2rem;
+    top: -2.2rem;
+    width:2rem;
+    height:2rem;
+    animation-delay: 0.5s;
+}
+
+.btn-cta:hover{
+    transform: translateY(-1rem);
+    font-size: 1.7rem;
+    letter-spacing: 4px;
+}
+
+span{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:  translate(-50%, -50%);
+    width:6rem;
+    height:6rem;
+    filter: blur(5px);
+    background: #0814bd;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+
+@keyframes float {
+    50% {transform:  translatey(-0.5rem);}
+    100% {transform: translateY(0);}
+}
