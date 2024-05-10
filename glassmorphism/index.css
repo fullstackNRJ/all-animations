@@ -23,8 +23,9 @@ body{
 }
 .btn-cta{
     width: 10rem;
+    transition: transform 2s ease-in-out, font-size 3s ease-in-out;
 }
-.btn-cta, .btn-cta::after,
+.btn,  .btn-cta, .btn-cta::after,
 .btn-cta::before{
      color: #fff;
      padding: 0.5rem;
@@ -69,6 +70,7 @@ body{
     transform: translateY(-1rem);
     font-size: 1.7rem;
     letter-spacing: 4px;
+   
 }
 
 span{
