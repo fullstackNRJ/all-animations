@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halo border effect</title>
+    <style>
+@property --gradiant-shape{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+        :root{
+            --clr-1: #052b2f;
+  --clr-2: #073438;
+  --clr-3: #0e4b50;
+  --clr-4: #2d8f85;
+  --clr-5: #637c54;
+       }
+        body{
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background-color: var(--clr-1);
+        }
+
+        .card{
+            height: 60vh;
+            aspect-ratio: 1/1.5;
+            background: var(--clr-1);
+            border-radius:0.5rem;
+            position: relative;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--clr-5);
+            text-shadow: 0 0 0.5rem var(--clr-4), 0 0 1rem var(--clr-4), 0 0 2rem var(--clr-4), 0 0 4rem var(--clr-4);
+        }
+
+        .card::before, .card::after{
+            content:"";
+            position:absolute;
+            inset: -0.5rem;
+            z-index:-1;
+            background: conic-gradient(
+                from var(--gradiant-shape),
+                var(--clr-2),
+                var(--clr-3),
+                var(--clr-4),
+                var(--clr-5)
+            );  
+            border-radius:inherit;
+            animation: rotation 20s linear infinte;
+        }
+
+        .card::after{
+            filter:blur(3.5rem);
+        }
+
+        @keyframes rotation{
+            0%{
+                --gradient-angle:0deg;
+            }
+            100%{ --gradient-angle:360deg;}
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        Halo border effect
+    </div>
+    
+</body>
+</html>
