@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count up numbers</title>
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background: darkslategrey;
+            font-size: 3rem;
+            color: aliceblue;
+        }
+        #countup{
+            transition: all 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <h1 id="countup" data-value="400">000</h1>
+        </div>
+
+        <script>
+            const countup = document.querySelector('#countup');
+            const endValue = parseInt(countup.getAttribute('data-value'));
+            let startValue = 0;
+            let duration = 5000;
+            const interval = duration/endValue;
+            let counter = setInterval(()=>{
+                startValue +=1
+                countup.innerText = startValue
+                if(startValue === endValue){
+                    clearInterval(counter)
+                }
+            }, interval);
+  
+            </script>
+</body>
+</html>
