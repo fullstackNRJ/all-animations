@@ -13,18 +13,15 @@ body{
 .headings{
 
 }
+.cards{
+
+}
 
 .buttons{
  display: flex;
  gap: 4rem;
 }
-.cards{
 
-}
-.btn-cta{
-    width: 10rem;
-    transition: transform 2s ease-in-out, font-size 3s ease-in-out;
-}
 .btn,  .btn-cta, .btn-cta::after,
 .btn-cta::before{
      color: #fff;
@@ -34,7 +31,7 @@ body{
      letter-spacing: 2px;
 
      background: rgba(255, 255, 255, 0.15);
-     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
      backdrop-filter: blur(4px);
      -webkit-backdrop-filter: blur(4px);
      border-radius: 10px;
@@ -43,10 +40,34 @@ body{
 
     }
 
+    .btn::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+        transform: skewX(30deg) translateX(0);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .btn:hover::before{
+        transform: skewX(90deg) translateX(75%);
+        
+    }
+
+    
+    .btn-cta{
+        width: 10rem;
+        transition: transform 2s ease-in-out, font-size 3s ease-in-out;
+    }
+
 .btn-cta::after,
 .btn-cta::before{
     position: absolute;
     content: '';
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     animation: float 4s  infinite;
 }
 
@@ -66,7 +87,7 @@ body{
     animation-delay: 0.5s;
 }
 
-.btn-cta:hover{
+.btn:hover, .btn-cta:hover{
     transform: translateY(-1rem);
     font-size: 1.7rem;
     letter-spacing: 4px;
