@@ -4,7 +4,7 @@ body{
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: #0c1016;
+    background-color: #1e2938;
     color: #ffffff;
     font-family: "Euclid Circular A";
     overflow-x: hidden;
@@ -16,11 +16,13 @@ body{
 .cards{
     display: flex;
     gap:3rem;
+    z-index: 1;
 
 }
 
 .card{
     width: 250px;
+    height: 320px;
     padding: 1rem;
     border-radius: 1rem;
     position: relative;
@@ -31,14 +33,66 @@ body{
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.card .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card .content{
+    transform: translateY(20rem);
+    transition: 0.5s;
+}
+
+.card:hover .content{
+    transform: translateY(0);
+}
+
+.card:hover h2{
+    top:-8rem;
 }
 
 .card h2{
-
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    font-size: 8rem;
+    color:rgba(255, 255, 255, 0.05);
+    pointer-events: none;
 }
 
-.card p{
-    
+.card h3{
+    font-size: 1.8rem;
+    color:#fff;
+    margin-bottom: 0.5rem;
+}
+
+.card a {
+    position: relative;
+    display: inline-block;
+    padding: .4rem 1.1rem;
+    margin-top: 1rem;
+    background: #fff;
+    color:#000;
+    border-radius: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+
+.card span{
+    font-size: 1rem;
+    color:#fff;
+    font-weight: 300;
 }
 
 .buttons{
@@ -165,7 +219,7 @@ body{
     
     .btn-cta{
         width: 10rem;
-        transition: transform 2s ease-in-out, font-size 3s ease-in-out;
+        
     }
 
 .btn-cta::after,
@@ -192,8 +246,8 @@ body{
     animation-delay: 0.5s;
 }
 
-.btn:hover, .btn-cta:hover{
-   /*  transform: translateY(-1rem); */
+ .btn-cta:hover{
+    transform: translateY(-1rem);
     font-size: 1.7rem;
     letter-spacing: 4px;
    
