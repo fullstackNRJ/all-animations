@@ -92,11 +92,15 @@ section{
 }
 
 .hero .content{
+    margin-left: 25rem;
     position: relative;
     text-align: center;
     color:#fff;
     transition: 0.5s;
     transition-delay: 1s;
+    /* display: flex;
+    flex-direction: column;
+    align-items: end; */
 }
 
 .hero.active .content {
@@ -109,15 +113,20 @@ section{
 
 .content h2{
     position: relative;
-    font-size: 10vw;
-    line-height: 5rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 8vw;
+    text-align: center;
+    line-height: 8rem;
     text-shadow: 0 5px 5px rgba(0,0,0, 0.2);
-
+    max-width: 6rem;
+   
 }
+
 
 .hero .social{
     position: absolute;
-    bottom: 20px;
+    right: 4rem;
+    bottom: 2rem;
     z-index: 20;
     display: flex;
     justify-content: center;
@@ -152,18 +161,19 @@ section{
 
 
 
-.content h2 span{
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.5rem;
-    line-height: 1rem;
+.content div{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.2rem;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     background: #fff;
-    color: #111;
-    padding: 0.2rem 1rem;
+    color: rgba(0,0,0, 0.6);
+    padding: 0.5rem;
     text-shadow: 0 5px 5px rgba(0,0,0, 0.2);
     box-shadow: 0 5px 5px rgba(0,0,0, 0.2);
+    
 }
 
 
@@ -171,7 +181,7 @@ section{
     position: absolute;
     left:0;
     top:0;
-    width: 40%;
+    width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 10px 0 15px rgba(0,0,0, 0.2);
@@ -240,9 +250,9 @@ section{
     transform: translateX(0);
 }
 
-@media(max-width:991px){
+@media(min-width: 100px) and ( max-width:640px){
     header{
-        padding: 0px;
+        padding: 10px;
         
     }
     .social{
@@ -250,9 +260,12 @@ section{
         right:20px;
     }
     .glass{
-        width:50%;
+        width:100%;
+    }
+    .content{
+        text-align: center;
     }
     .content h2{
-        font-size: 18vw;
+        font-size: 16vw;
     }
 }
