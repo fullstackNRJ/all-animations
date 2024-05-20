@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Lakshdweep</title>
-    <link src="./index.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
 </head>
 <body>
     <section class="hero">
         <header>
-            <a href="#" class="logo" >Water .</a>
-            <div class="toggle"></div>
+            <a href="#" class="logo">Water.</a>
+            <div class="toggle" onclick="toggle()"><img class="menu-close" src="burger-menu-svgrepo-com.svg"  width="40px" height="40px"/>
+                <img class="menu-open" src="cross-svgrepo-com.svg"  width="40px" height="40px"/>
+            </div>
         </header>
-
-        <div class="bg-video">
-            <video src="" muted autoplay loop > </video>
+        <div class="glass"></div>
+        <div class="content">
+            <h2>Experience the heaven <br> <span>Visit Lakshdweep</span></h2>
         </div>
+        <div id="bg-video">
+            <video src="bg_main_video.mp4" muted autoplay loop > </video>
+        </div>
+        <ul class="social">
+            <li style="--i:1"><a href="#"><img src="facebook.png" alt="fb"></a></li>
+            <li style="--i:2"><a href="#"><img src="twitter.png" alt="x"></a></li>
+            <li style="--i:3"><a href="#"><img src="instagram.png" alt="insta"></a></li>
+        </ul>
+        <ul class="navigation">
+            <li style="--i:1"><a href="">Home</a></li>
+            <li style="--i:2"><a href="">Gallery</a></li>
+            <li style="--i:3"><a href="">Bookings</a></li>
+            <li style="--i:4"><a href="">Contact</a></li>
+        </ul>
+
+
     </section>
     
+    <script>
+        function toggle(){
+            const section = document.querySelector('.hero');
+            const toggle = document.querySelector('.toggle');
+            const navigation = document.querySelector('.navigation');
+            section.classList.toggle('active');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
